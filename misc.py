@@ -14,7 +14,7 @@ def get_word_definitions(word: str) -> list:
         resp = requests.get(word_url)
         if resp.status_code == 200:
             definitions_full_list = resp.json()[0].get('meanings')[0].get('definitions')
-            # pprint()
+
             definitions = [definition.get('definition') for definition in definitions_full_list]
             # examples = [example.get('example') for example in definitions_full_list]
             return definitions

@@ -1,5 +1,5 @@
 config = {
-    'TOKEN': '%TOKEN%',
+    'TOKEN': 'token',
     'CHAT_ID': '%chat_id%'
 }
 
