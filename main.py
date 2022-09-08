@@ -27,7 +27,10 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: len(message.text.split()))  # func evaluates to True if len == 1 (1 == True)
 def echo_all(message):
     definitions = get_word_definitions(message.text)
-    bot.reply_to(message, '\n'.join(definitions))
+    if definitions is None:
+        bot.reply_to(message, 'Please try again.')
+    else:
+        bot.reply_to(message, '• ' + '\n• '.join(definitions))
 
     # TODO: add more functionality
     #   or handle more cases
